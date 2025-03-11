@@ -1,0 +1,7 @@
+{
+  "name": "ram-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
