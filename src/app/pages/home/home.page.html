@@ -1,0 +1,36 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title>Mi API de RAM</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let c of characters" size-lg="6" sise-md="6" sise-sm="12" size="12">
+        <ion-card color="light">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size-lg="4" sise-md="4" sise-sm="4" size="12">
+                  <ion-avatar>
+                    <img [src]="c.image" />
+                  </ion-avatar>
+                </ion-col>
+                <ion-col size-lg="8" sise-md="8" sise-sm="8" size="12">
+                  <ion-card-title>{{c.name}}</ion-card-title>
+                  <ion-card-subtitle>Especie: {{c.species}}</ion-card-subtitle>
+                  <ion-card-subtitle>Estadp: {{c.status}}</ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="getCharacters($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
