@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
   constructor(
     private ramService: RamService,
   ) {
-    this.params.count = 0;
+    this.params.count = "Buscando...";
     addIcons({ arrowUp });
   }
 
